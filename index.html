@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="zh-TW"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6ImY3ZjVhMTg0YTgyMWRjYTVmMDBlY2M0NDBmZGE3NGZmMjA4N2NkM2MiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwMDM1MzI0MTc5Njc0NTcxOTM4NCIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjX2JiYjJlNTkyMmYwOGIyMjBfaW5kZXguaHRtbC0xMDgifSwiZXhwIjoxNzczNzE3MDUwLCJpYXQiOjE3NzM3MTM0NTAsImFsZyI6IlJTMjU2In0.hoQ5DDpi9lbr4tEpZxbrb8kHybRCkI0C-6Btf-LK04jybAYod-ttZIkXJN0QXclYx--Kx4oxomiC0LLYJUuEWVbQlosX0ALJ01wvloYTE-J9j-lsw4v3v4ISWO5cGStj_nbtbi5jv52VxJK1tT8r6bidXTrMxhqp5v_hLzfDHMj7eT07-Ch8Rr_L_fuZncI5jmJ6sBmgRMtwltC-wfOpmuvT_vsOPSBzxwSHODRgyYa2QcoF3jczophyWYf7QBQpp_KQi_0Dw9JaNc3xWXaVDTmxqRj57-j67bapY8yXLP0mnnaAoKTSwWC7Hep6jFRa-xHjkAe7aGugn-9cXkaBiQ","c_bbb2e5922f08b220_index.html-108")</script><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+})();</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第八課 咪咪歷險記 - 互動繪本</title>
+    <style>
+        :root {
+            --primary-color: #e67e22;
+            --bg-color: #f5f6fa;
+            --text-color: #2f3640;
+            --panel-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-color);
+        }
+
+        .book-container {
+            width: 95%;
+            max-width: 850px;
+            background-color: var(--panel-bg);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative; /* 為了讓儲存按鈕可以絕對定位 */
+        }
+
+        .download-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 10px rgba(243, 156, 18, 0.3);
+            z-index: 10;
+        }
+
+        .download-btn:hover {
+            background-color: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(243, 156, 18, 0.4);
+        }
+
+        .canvas-container {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            border-bottom: 5px solid #ecf0f1;
+            background-color: #dff9fb;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .text-container {
+            padding: 30px 40px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 18px;
+            align-self: flex-start;
+            box-shadow: 0 4px 6px rgba(230, 126, 34, 0.2);
+            letter-spacing: 1px;
+        }
+
+        .story-text {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            min-height: 130px;
+            white-space: pre-wrap;
+            color: #353b48;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 25px;
+            border-top: 2px dashed #dcdde1;
+            margin-top: 20px;
+        }
+
+        button.nav-btn {
+            background-color: #4cd137;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1.15rem;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 10px rgba(76, 209, 55, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        button.nav-btn:hover:not(:disabled) {
+            background-color: #44bd32;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(76, 209, 55, 0.4);
+        }
+
+        button.nav-btn:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .page-indicator {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #7f8fa6;
+            background: #f1f2f6;
+            padding: 8px 16px;
+            border-radius: 15px;
+        }
+
+        @media (max-width: 650px) {
+            .canvas-container { height: 260px; }
+            .story-text { font-size: 1.15rem; min-height: 110px; }
+            .text-container { padding: 20px 25px; }
+            button.nav-btn { padding: 10px 20px; font-size: 1rem; }
+            .download-btn { top: 10px; right: 10px; padding: 8px 12px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="book-container">
+        <!-- 儲存為 HTML 檔案按鈕 -->
+        <button class="download-btn" onclick="downloadHTML()" title="將此繪本儲存到電腦中">💾 儲存繪本</button>
+
+        <!-- 畫布區域 -->
+        <div class="canvas-container">
+            <canvas id="gameCanvas" width="850" height="400"></canvas>
+        </div>
+        
+        <!-- 文字與控制區域 -->
+        <div class="text-container">
+            <div class="section-tag" id="sectionTitle">第八課 咪咪歷險記</div>
+            <div class="story-text" id="pageContent">貓咪媽媽生了一窩小貓，有白色的、棕色的，還有幾隻是白棕相間的。其中最漂亮的一隻，就是咪咪了。咪咪全身都是潔白的毛，蜷縮在媽媽懷裏，看起來像極了一團白絨線球。</div>
+            
+            <div class="controls">
+                <button class="nav-btn" id="prevBtn" onclick="prevPage()">◀ 上一頁</button>
+                <div class="page-indicator" id="pageIndicator">2 / 31</div>
+                <button class="nav-btn" id="nextBtn" onclick="nextPage()">下一頁 ▶</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // === 重新依照每頁 100 字上限分段的故事資料 ===
+        const storyData = [
+            { section: "背經", text: "清潔的人，你以清潔待他。 (撒下二二 27 )", scene: 'bible' },
+            { section: "第八課 咪咪歷險記", text: "貓咪媽媽生了一窩小貓，有白色的、棕色的，還有幾隻是白棕相間的。其中最漂亮的一隻，就是咪咪了。咪咪全身都是潔白的毛，蜷縮在媽媽懷裏，看起來像極了一團白絨線球。", scene: 'indoor_basket' },
+            { section: "第八課 咪咪歷險記", text: "貓咪媽媽無微不至的照顧每一隻小貓，餒牠們母奶，還不時用舌頭舔牠們的身體，把小貓咪舔得乾乾淨淨的。小貓咪躺在媽媽的懷裏，眼睛也不用張開，就咕嚕咕嚕的吸奶。", scene: 'indoor_nursing' },
+            { section: "第八課 咪咪歷險記", text: "過了一週，小貓咪都長大了，眼睛也張開了，牠們嘗試着從媽媽懷裏走出去，認識周遭的環境。小貓咪們長大了，每天在媽媽身旁跳來跳去，牠們好想出去玩哦!", scene: 'indoor_playing' },
+            { section: "第八課 咪咪歷險記", text: "但是媽媽怕小寶寶走丟了，不讓小貓咪走太遠，牠們稍微跑遠一點，媽媽立刻趕過來，把牠們叼回家。咪咪在家裏待煩了，牠覺得家裏好無聊，爲甚麼媽媽不讓牠出去走一走呢？", scene: 'indoor_bored' },
+            { section: "第八課 咪咪歷險記", text: "這一天，牠趁着媽媽出去找食物時，一溜煙的跑了出去。牠想到處去逛逛，看看外面的世界呢!咪咪在花叢中，看見好多蝴蝶飛舞着，牠好奇的追着蝴蝶一直跑，跑得好累好累，就躺在地上，把腳翹起來休息一會兒。", scene: 'garden_butterfly' },
+            { section: "第八課 咪咪歷險記", text: "牠又看見有幾隻公雞，在曬穀場上喫着穀粒，好奇的咪咪也想去和公雞玩玩，喫喫牠們的穀粒。牠隨手抓了一些穀粒起來喫，穀粒可真硬，咬了半天咬不動，嘴巴上卻沾滿了好些榖粒，像長了鬍鬚一樣。", scene: 'farm_rooster' },
+            { section: "第八課 咪咪歷險記", text: "牠用前爪抹了抹嘴巴，繼續往前走。咪咪走到一家農舍旁邊，看見一窩豬兒在泥中打滾。牠看豬兒翻滾的樣子，挺有趣的。咪咪想，我也進去玩一會罷，於是咪咪走進豬圈裏，想和豬兒們玩一會。", scene: 'mud_approaching' },
+            { section: "第八課 咪咪歷險記", text: "豬兒們卻說，『貓咪，走開，這兒不是你的家，你的毛會弄的。』咪咪卻不想離開，仍舊往裏面走。沒想到一腳踩到一灘泥水，濺得牠滿身都是。這下咪咪只好甩甩身體，不情願的和豬兒們說再見了。", scene: 'mud_splashed' },
+            { section: "第八課 咪咪歷險記", text: "那附在牠身上的泥，卻怎麼也甩不下來。咪咪繼續往前走，走進一片樹林。樹林裏有好多動物朋友，小松鼠在地上鑽來鑽去，大口大口的啃着松果；鳥兒們在樹上嘰嘰喳喳的叫個不停，像是正在開鳥族大會呢!", scene: 'forest_walking' },
+            { section: "第八課 咪咪歷險記", text: "還有鹿兒和小兔子，牠們看見咪咪，都很和善的歡迎牠：『小花貓，你好。』咪咪覺得十分奇怪，牠明明是隻小白貓，爲甚麼別人都喊牠是小花貓呢？", scene: 'forest_meeting' },
+            { section: "第八課 咪咪歷險記", text: "咪咪看見小白兔，就問牠：『白兔哥哥，我明明是小白貓，怎麼大家都說我是小花貓呢？』小白兔說，『 來，我帶你到水邊看看，你是像白貓還是像花貓。』", scene: 'forest_talking' },
+            { section: "第八課 咪咪歷險記", text: "小白兔就帶咪咪到一處溪水邊，讓咪咪看看水中的倒影。哇!真的是隻小花貓呢!全身的毛都染上了泥巴，臉也變成了小花臉。咪咪想，這下糟糕了。", scene: 'stream_reflection' },
+            { section: "第八課 咪咪歷險記", text: "媽媽一再告訴我們，神創造我們貓兒，是愛清潔的動物，不會自己弄得髒兮兮的。現在我全身都是泥巴，自己又不會清理，回去準要挨罵了。", scene: 'stream_sad' },
+            { section: "第八課 咪咪歷險記", text: "咪咪只好對小白兔說，『白兔大哥，對不起，我偷跑出來玩，弄得全身都是泥，現在我得回家去了，不能再玩了。』小白兔說，『對，趕緊回家去，讓媽媽幫你洗把臉，洗個澡。", scene: 'stream_pointing' },
+            { section: "第八課 咪咪歷險記", text: "我們小白兔也像你們貓兒一樣，是愛乾淨的動物呢!』咪咪一路跑回家，全身都是泥巴，回到家裏，媽媽早已着急的等在門口。咪咪看見媽媽，不好意思的把頭低下來，話也不敢多說一句。", scene: 'running_home' },
+            { section: "第八課 咪咪歷險記", text: "媽媽沒有責備咪咪，只是一邊用舌頭把咪咪身上的毛舔乾淨，臉也弄乾淨，一邊問咪咪究竟去了那些地方。咪咪一五一十的告訴媽媽：牠追了蝴蝶，喫了公雞的穀粒，又進了豬圈，不小心踩到泥裏，把毛給弄髒了。", scene: 'indoor_washing' },
+            { section: "第八課 咪咪歷險記", text: "後來在樹林裏，碰見好心的小兔子，牠纔知道一身都髒了。媽媽繼續舔着咪咪，對牠說，『我們不是豬，在泥裏打滾；我們是愛乾淨的貓兒，要學會怎樣把自己弄乾淨，保持身體的清潔。』", scene: 'indoor_teaching' },
+            { section: "第八課 咪咪歷險記", text: "於是媽媽教咪咪，怎樣用舌頭舔自己身上的毛，把毛舔乾淨。又怎樣用前腳的爪子，把臉擦乾淨。當咪咪把自己洗乾淨了，媽媽又帶著咪咪禱告：", scene: 'indoor_self_wash' },
+            { section: "第八課 咪咪歷險記", text: "『主阿!赦免我沒有聽媽媽的話，偷跑出去，把自己弄髒了。求你幫助我，作個乾淨清潔，討你喜歡的乖孩子。』咪咪學會了怎樣洗臉和清潔身體，成爲一隻乾淨的小白貓。", scene: 'indoor_praying' },
+            { section: "第八課 咪咪歷險記", text: "牠不再去豬圈裏打滾，也不再把自己弄得髒兮兮了，牠喜歡作隻清潔乾淨的小白貓，爲討神喜歡。小朋友，神喜歡我們是個清潔的孩子。因祂造我們的時候，原是清潔可愛的。我們要常常保持清潔，討神的喜歡。", scene: 'garden_clean' },
+            { section: "故事重點", text: "(一) 從小貓咪咪溜出去玩，弄得一身是髒的故事，讓幼兒認識保持身體清潔的重要。(二) 認識神給很多動物有愛乾淨的天性，像貓咪的舌頭上長了很多小刺，能像刷子一樣，把身上的灰塵舔掉。", scene: 'icon_lightbulb' },
+            { section: "故事重點", text: "舌頭舔不到的地方，像頭和脖子後面，貓咪會把口水抹在腳，再用前腳來擦。(三) 很多動物都有清潔的習性，人是照着神的形像造的，更當操練清潔，好彰顯神。", scene: 'icon_lightbulb' },
+            { section: "問題討論", text: "(一) 咪咪的毛是甚麼顏色的？\n(二) 咪咪的媽媽怎樣幫咪咪洗澡？\n(三) 咪咪追蝴蝶追累了，就躺在地上休息，你想牠的毛會不會髒掉？\n(四) 森林裏的動物爲甚麼把咪咪看成是一隻小花貓？", scene: 'icon_question' },
+            { section: "問題討論", text: "(五) 我們如何保持身體的清潔？\n(洗手、洗臉、刷牙、洗澡、穿整齊清潔的衣服。)", scene: 'icon_question' },
+            { section: "常規訓練", text: "我會自己穿脫、摺疊衣服。\n豫備材料：各種不同的衣服，可按季節分春、夏、秋、冬，以及按用途分内衣、外衣、睡衣等。衣服可以稍大些，便於幼兒直接套上去。", scene: 'icon_clothes' },
+            { section: "常規訓練", text: "(一) 老師示範穿、脫衣服的方法，特別注意衣領翻好，衣擺放進褲子裏。\n(二) 請小朋友排隊選擇自己喜歡的衣服穿上後，站成一排，老師檢查看是否穿戴整齊宜。", scene: 'icon_clothes' },
+            { section: "常規訓練", text: "(三) 請小朋友自己脫下剛纔穿上的衣服，老師示範並教導幼兒自己摺疊、掛衣服。", scene: 'icon_clothes' },
+            { section: "活動", text: "清潔寶寶人人愛。\n(一) 老師告訴小朋友，作個清潔寶寶，人人都喜愛。常常洗手、洗臉、刷牙，天天洗澡，換乾淨的衣服；並介紹各種衣服，在甚麼時候、甚麼場合穿。", scene: 'icon_soap' },
+            { section: "活動", text: "(二) 由小朋友分別扮演一家人，(爸、媽、兄弟姊妹，)從起牀到睡覺，作了那些和清潔有關的事。(早晨刷牙、洗臉、穿衣，喫飯前後洗手，晚上洗澡、刷牙、換睡衣等。)", scene: 'icon_soap' },
+            { section: "生活操練", text: "會每天洗澡，也會自己穿脫、摺疊衣服，並保持衣服的整齊清潔。", scene: 'icon_star' }
+        ];
+
+        let currentPage = 0;
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const cw = canvas.width;
+        const ch = canvas.height;
+
+        // ==========================================
+        // 核心繪圖引擎與形狀函式庫 (大幅擴充細節)
+        // ==========================================
+
+        // 畫漸層背景
+        function drawGradient(c1, c2, y1, y2) {
+            let grad = ctx.createLinearGradient(0, y1, 0, y2);
+            grad.addColorStop(0, c1);
+            grad.addColorStop(1, c2);
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, y1, cw, y2 - y1);
+        }
+
+        // 畫太陽與雲朵
+        function drawSkyDetails(isDusk = false) {
+            ctx.fillStyle = isDusk ? '#ff7f50' : '#f1c40f'; // 太陽顏色
+            ctx.beginPath();
+            ctx.arc(cw - 120, 80, 50, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 雲朵
+            ctx.fillStyle = isDusk ? '#ffb8b8' : '#ffffff';
+            const drawCloud = (cx, cy, s) => {
+                ctx.save(); ctx.translate(cx, cy); ctx.scale(s, s);
+                ctx.beginPath(); ctx.arc(0, 0, 30, 0, Math.PI*2);
+                ctx.arc(40, -10, 40, 0, Math.PI*2); ctx.arc(80, 0, 30, 0, Math.PI*2);
+                ctx.fill(); ctx.restore();
+            };
+            drawCloud(100, 60, 1);
+            drawCloud(cw/2, 40, 0.8);
+            drawCloud(cw - 300, 90, 1.2);
+        }
+
+        // 畫樹木 (更精細)
+        function drawTree(x, y, scale) {
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.scale(scale, scale);
+            // 樹幹
+            ctx.fillStyle = '#6ab04c'; // 陰影
+            ctx.fillRect(-20, 0, 40, 150);
+            ctx.fillStyle = '#535c68'; // 樹皮
+            ctx.fillRect(-15, 0, 30, 150);
+            
+            // 樹冠 (多層次圓形)
+            ctx.fillStyle = '#218c74';
+            ctx.beginPath(); ctx.arc(0, -60, 80, 0, Math.PI*2); ctx.fill();
+            ctx.fillStyle = '#26ae60';
+            ctx.beginPath(); ctx.arc(-40, -20, 70, 0, Math.PI*2); ctx.fill();
+            ctx.beginPath(); ctx.arc(40, -20, 70, 0, Math.PI*2); ctx.fill();
+            ctx.fillStyle = '#2ecc71';
+            ctx.beginPath(); ctx.arc(0, -10, 60, 0, Math.PI*2); ctx.fill();
+            ctx.restore();
+        }
+
+        // 畫室內背景 (窗戶、木地板、地毯)
+        function drawIndoor() {
+            drawGradient('#fae1dd', '#ffeaa7', 0, ch * 0.55); // 牆壁
+            
+            // 窗戶
+            ctx.fillStyle = '#ffffff'; ctx.fillRect(100, 40, 180, 150);
+            ctx.fillStyle = '#74b9ff'; ctx.fillRect(110, 50, 75, 65); ctx.fillRect(195, 50, 75, 65);
+            ctx.fillRect(110, 120, 75, 60); ctx.fillRect(195, 120, 75, 60);
+            
+            // 木地板
+            drawGradient('#e17055', '#d63031', ch * 0.55, ch);
+            ctx.strokeStyle = '#b2bec3'; ctx.lineWidth = 2;
+            for(let i=0; i<cw; i+=60) {
+                ctx.beginPath(); ctx.moveTo(i, ch*0.55); ctx.lineTo(i - 100, ch); ctx.stroke();
+            }
+
+            // 圓形地毯
+            ctx.fillStyle = '#fdcb6e';
+            ctx.beginPath(); ctx.ellipse(cw/2, ch*0.75, 250, 60, 0, 0, Math.PI*2); ctx.fill();
+            ctx.strokeStyle = '#e1b12c'; ctx.lineWidth = 5; ctx.stroke();
+        }
+
+        // 畫貓咪 (支援多種姿態、臉部細節、髒污狀態)
+        function drawCat(x, y, scale, pose, isDirty = false, color = '#ffffff') {
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.scale(scale, scale);
+
+            // 陰影
+            ctx.fillStyle = 'rgba(0,0,0,0.15)';
+            ctx.beginPath(); ctx.ellipse(0, 45, 50, 10, 0, 0, Math.PI*2); ctx.fill();
+
+            // 顏色設定
+            const catColor = color;
+            const darkColor = (color === '#ffffff') ? '#dfe6e9' : '#5d4037'; // 邊緣陰影
+            
+            ctx.fillStyle = catColor;
+            ctx.strokeStyle = darkColor;
+            ctx.lineWidth = 2;
+
+            if (pose === 'curl') {
+                // 蜷縮睡覺的球狀
+                ctx.beginPath(); ctx.arc(0, 20, 35, 0, Math.PI*2); ctx.fill(); ctx.stroke();
+                // 閉眼
+                ctx.strokeStyle = '#2d3436'; ctx.beginPath(); ctx.arc(-10, 15, 5, Math.PI, Math.PI*2); ctx.stroke();
+            } 
+            else if (pose === 'sit' || pose === 'pray' || pose === 'wash') {
+                // 坐姿
+                // 尾巴
+                ctx.strokeStyle = catColor; ctx.lineWidth = 12; ctx.lineCap = 'round';
+                ctx.beginPath(); ctx.moveTo(25, 30); ctx.quadraticCurveTo(60, 30, 50, -10); ctx.stroke();
+                // 身體
+                ctx.fillStyle = catColor;
+                ctx.beginPath(); ctx.ellipse(0, 20, 30, 40, 0, 0, Math.PI*2); ctx.fill();
+                // 前腳
+                if (pose === 'pray') {
+                    ctx.beginPath(); ctx.arc(0, 10, 8, 0, Math.PI*2); ctx.fill(); // 祈禱手
+                } else if (pose === 'wash') {
+                    ctx.beginPath(); ctx.arc(-15, 0, 10, 0, Math.PI*2); ctx.fill(); // 洗臉手
+                } else {
+                    ctx.beginPath(); ctx.arc(-10, 50, 8, 0, Math.PI*2); ctx.arc(10, 50, 8, 0, Math.PI*2); ctx.fill();
+                }
+                drawCatHead(0, -20, pose, isDirty);
+            }
+            else { // walk / stand
+                // 尾巴
+                ctx.strokeStyle = catColor; ctx.lineWidth = 12; ctx.lineCap = 'round';
+                ctx.beginPath(); ctx.moveTo(35, 10); ctx.quadraticCurveTo(60, -30, 70, -10); ctx.stroke();
+                // 身體
+                ctx.fillStyle = catColor;
+                ctx.beginPath(); ctx.ellipse(0, 20, 45, 25, 0, 0, Math.PI*2); ctx.fill();
+                // 腳
+                ctx.beginPath(); ctx.arc(-25, 45, 8, 0, Math.PI*2); ctx.arc(-10, 45, 8, 0, Math.PI*2);
+                ctx.arc(15, 45, 8, 0, Math.PI*2); ctx.arc(30, 45, 8, 0, Math.PI*2); ctx.fill();
+                drawCatHead(-35, 0, pose, isDirty);
+            }
+
+            // 髒污特效 (泥巴斑點)
+            if (isDirty) {
+                ctx.fillStyle = '#8d6e63';
+                const spots = [[0, 20, 8], [15, 10, 6], [-10, 30, 7], [-20, 15, 5], [5, 35, 4]];
+                spots.forEach(s => {
+                    ctx.beginPath(); ctx.arc(s[0], s[1], s[2], 0, Math.PI*2); ctx.fill();
+                });
+            }
+
+            ctx.restore();
+        }
+
+        // 貓咪頭部細節
+        function drawCatHead(hx, hy, pose, isDirty) {
+            ctx.save(); ctx.translate(hx, hy);
+            ctx.fillStyle = '#ffffff';
+            // 臉
+            ctx.beginPath(); ctx.arc(0, 0, 28, 0, Math.PI*2); ctx.fill();
+            // 耳朵
+            ctx.beginPath(); ctx.moveTo(-20, -15); ctx.lineTo(-25, -40); ctx.lineTo(-5, -25); ctx.fill();
+            ctx.beginPath(); ctx.moveTo(20, -15); ctx.lineTo(25, -40); ctx.lineTo(5, -25); ctx.fill();
+            ctx.fillStyle = '#ffb8b8'; // 內耳
+            ctx.beginPath(); ctx.moveTo(-15, -20); ctx.lineTo(-20, -35); ctx.lineTo(-8, -25); ctx.fill();
+            ctx.beginPath(); ctx.moveTo(15, -20); ctx.lineTo(20, -35); ctx.lineTo(8, -25); ctx.fill();
+            
+            // 五官
+            ctx.fillStyle = '#2d3436';
+            if (pose === 'pray' || pose === 'sad') {
+                // 閉眼/悲傷
+                ctx.beginPath(); ctx.arc(-10, -5, 5, Math.PI, Math.PI*2); ctx.stroke();
+                ctx.beginPath(); ctx.arc(10, -5, 5, Math.PI, Math.PI*2); ctx.stroke();
+            } else {
+                // 睜眼
+                ctx.beginPath(); ctx.arc(-10, -5, 4, 0, Math.PI*2); ctx.arc(10, -5, 4, 0, Math.PI*2); ctx.fill();
+            }
+            ctx.fillStyle = '#ff7675'; ctx.beginPath(); ctx.arc(0, 5, 3, 0, Math.PI*2); ctx.fill(); // 鼻子
+            // 鬍鬚
+            ctx.strokeStyle = '#b2bec3'; ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(-15, 5); ctx.lineTo(-35, 0); ctx.moveTo(-15, 10); ctx.lineTo(-35, 15);
+            ctx.moveTo(15, 5); ctx.lineTo(35, 0); ctx.moveTo(15, 10); ctx.lineTo(35, 15); ctx.stroke();
+
+            // 臉部髒污或穀粒
+            if (isDirty) {
+                ctx.fillStyle = '#8d6e63';
+                ctx.beginPath(); ctx.arc(-15, 10, 5, 0, Math.PI*2); ctx.arc(12, 12, 4, 0, Math.PI*2); ctx.fill();
+            }
+            if (pose === 'grain') {
+                ctx.fillStyle = '#f1c40f'; // 穀粒
+                for(let i=0; i<8; i++) {
+                    ctx.fillRect(-20 + Math.random()*40, 5 + Math.random()*15, 3, 3);
+                }
+            }
+            ctx.restore();
+        }
+
+        // 畫豬與泥坑
+        function drawMudPen() {
+            // 泥坑
+            ctx.fillStyle = '#5d4037';
+            ctx.beginPath(); ctx.ellipse(cw/2 + 100, ch*0.75, 200, 60, 0, 0, Math.PI*2); ctx.fill();
+            // 柵欄
+            ctx.fillStyle = '#836323';
+            for(let i=100; i<cw; i+=80) { ctx.fillRect(i, ch*0.45, 15, 80); }
+            ctx.fillRect(80, ch*0.5, cw-100, 15); ctx.fillRect(80, ch*0.6, cw-100, 15);
+        }
+
+        function drawPig(x, y, scale, isRolling) {
+            ctx.save(); ctx.translate(x, y); ctx.scale(scale, scale);
+            ctx.fillStyle = '#ff9ff3';
+            if (isRolling) ctx.rotate(Math.PI); // 翻滾
+            
+            // 身體
+            ctx.beginPath(); ctx.ellipse(0, 0, 55, 40, 0, 0, Math.PI*2); ctx.fill();
+            // 頭
+            ctx.beginPath(); ctx.arc(-45, -10, 30, 0, Math.PI*2); ctx.fill();
+            // 鼻子
+            ctx.fillStyle = '#f368e0'; ctx.beginPath(); ctx.ellipse(-65, -5, 12, 18, 0, 0, Math.PI*2); ctx.fill();
+            ctx.fillStyle = '#222'; ctx.beginPath(); ctx.arc(-68, -10, 2, 0, Math.PI*2); ctx.arc(-68, 0, 2, 0, Math.PI*2); ctx.fill();
+            // 眼睛與耳
+            ctx.beginPath(); ctx.arc(-50, -20, 3, 0, Math.PI*2); ctx.fill();
+            ctx.fillStyle = '#ff9ff3'; ctx.beginPath(); ctx.moveTo(-35, -35); ctx.lineTo(-25, -50); ctx.lineTo(-15, -35); ctx.fill();
+            // 泥巴噴濺
+            ctx.fillStyle = '#3e2723';
+            ctx.beginPath(); ctx.arc(10, 10, 10, 0, Math.PI*2); ctx.arc(-10, 20, 8, 0, Math.PI*2); ctx.arc(30, -10, 12, 0, Math.PI*2); ctx.fill();
+            ctx.restore();
+        }
+
+        // 畫公雞與曬穀場
+        function drawRooster(x, y) {
+            ctx.save(); ctx.translate(x, y);
+            // 身體
+            ctx.fillStyle = '#e67e22'; ctx.beginPath(); ctx.arc(0, 0, 40, 0, Math.PI*2); ctx.fill();
+            // 尾巴
+            ctx.fillStyle = '#2c3e50'; ctx.beginPath(); ctx.moveTo(30, -10); ctx.lineTo(70, -60); ctx.lineTo(40, 10); ctx.fill();
+            ctx.fillStyle = '#16a085'; ctx.beginPath(); ctx.moveTo(35, 0); ctx.lineTo(80, -30); ctx.lineTo(40, 20); ctx.fill();
+            // 頭與脖子
+            ctx.fillStyle = '#f1c40f'; ctx.beginPath(); ctx.moveTo(-20, -20); ctx.lineTo(-40, -60); ctx.lineTo(-10, -30); ctx.fill();
+            ctx.beginPath(); ctx.arc(-35, -60, 18, 0, Math.PI*2); ctx.fill();
+            // 雞冠與嘴
+            ctx.fillStyle = '#e74c3c';
+            ctx.beginPath(); ctx.arc(-35, -80, 8, 0, Math.PI*2); ctx.arc(-25, -75, 8, 0, Math.PI*2); ctx.arc(-45, -75, 8, 0, Math.PI*2); ctx.fill();
+            ctx.fillStyle = '#d35400'; ctx.beginPath(); ctx.moveTo(-50, -60); ctx.lineTo(-65, -55); ctx.lineTo(-50, -50); ctx.fill();
+            // 眼睛
+            ctx.fillStyle = '#000'; ctx.beginPath(); ctx.arc(-35, -62, 3, 0, Math.PI*2); ctx.fill();
+            ctx.restore();
+        }
+
+        // 畫兔子
+        function drawRabbit(x, y) {
+            ctx.save(); ctx.translate(x, y);
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath(); ctx.ellipse(0, 20, 35, 25, 0, 0, Math.PI*2); ctx.fill(); // 身體
+            ctx.beginPath(); ctx.arc(-25, -5, 22, 0, Math.PI*2); ctx.fill(); // 頭
+            ctx.beginPath(); ctx.ellipse(-30, -40, 8, 30, -Math.PI/8, 0, Math.PI*2); ctx.fill(); // 耳
+            ctx.ellipse(-15, -40, 8, 30, Math.PI/8, 0, Math.PI*2); ctx.fill();
+            ctx.fillStyle = '#ffb8b8'; ctx.beginPath(); ctx.arc(-30, -5, 4, 0, Math.PI*2); ctx.fill(); // 眼
+            ctx.restore();
+        }
+
+        // 畫蝴蝶
+        function drawButterfly(x, y, scale, color) {
+            ctx.save(); ctx.translate(x, y); ctx.scale(scale, scale);
+            ctx.fillStyle = color;
+            ctx.beginPath(); ctx.ellipse(-15, -15, 20, 15, Math.PI/4, 0, Math.PI*2); ctx.fill();
+            ctx.beginPath(); ctx.ellipse(15, -15, 20, 15, -Math.PI/4, 0, Math.PI*2); ctx.fill();
+            ctx.beginPath(); ctx.ellipse(-12, 12, 15, 12, -Math.PI/4, 0, Math.PI*2); ctx.fill();
+            ctx.beginPath(); ctx.ellipse(12, 12, 15, 12, Math.PI/4, 0, Math.PI*2); ctx.fill();
+            ctx.fillStyle = '#2d3436'; ctx.fillRect(-3, -20, 6, 40); // 身體
+            ctx.restore();
+        }
+
+        // 繪製高質感圖示 (針對教學與重點頁面)
+        function drawIconScene(type) {
+            drawGradient('#f1f2f6', '#dfe4ea', 0, ch);
+            ctx.save(); ctx.translate(cw/2, ch/2);
+            
+            // 光暈背景
+            let g = ctx.createRadialGradient(0,0,10, 0,0,150);
+            g.addColorStop(0, '#ffffff'); g.addColorStop(1, 'rgba(255,255,255,0)');
+            ctx.fillStyle = g; ctx.beginPath(); ctx.arc(0,0,150,0,Math.PI*2); ctx.fill();
+
+            ctx.shadowColor = 'rgba(0,0,0,0.2)'; ctx.shadowBlur = 15; ctx.shadowOffsetY = 10;
+            
+            if (type === 'bible') {
+                // 畫聖經與十字架
+                ctx.fillStyle = '#8b4513'; ctx.fillRect(-80, -60, 160, 120); // 書皮
+                ctx.fillStyle = '#f1f2f6'; ctx.fillRect(-70, -50, 65, 100); ctx.fillRect(5, -50, 65, 100); // 內頁
+                ctx.fillStyle = '#d4af37'; ctx.fillRect(-10, -30, 20, 60); ctx.fillRect(-25, -10, 50, 20); // 十字架
+            } else if (type === 'icon_lightbulb') {
+                // 畫燈泡
+                ctx.fillStyle = '#f1c40f'; ctx.beginPath(); ctx.arc(0, -30, 50, 0, Math.PI*2); ctx.fill();
+                ctx.fillRect(-25, 0, 50, 40);
+                ctx.fillStyle = '#95a5a6'; ctx.fillRect(-20, 40, 40, 20); ctx.beginPath(); ctx.arc(0, 65, 15, 0, Math.PI*2); ctx.fill();
+                ctx.strokeStyle = '#f39c12'; ctx.lineWidth = 4;
+                for(let i=0; i<5; i++) {
+                    let a = Math.PI + (i * Math.PI/4);
+                    ctx.beginPath(); ctx.moveTo(Math.cos(a)*60, -30+Math.sin(a)*60); ctx.lineTo(Math.cos(a)*90, -30+Math.sin(a)*90); ctx.stroke();
+                }
+            } else if (type === 'icon_question') {
+                // 畫大問號
+                ctx.fillStyle = '#3498db'; ctx.font = 'bold 160px Arial';
+                ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('?', 0, 10);
+            } else if (type === 'icon_clothes') {
+                // 畫衣服
+                ctx.fillStyle = '#ff6b81';
+                ctx.beginPath(); ctx.moveTo(-40, -60); ctx.lineTo(40, -60); ctx.lineTo(80, -20); ctx.lineTo(50, 0);
+                ctx.lineTo(40, -20); ctx.lineTo(40, 60); ctx.lineTo(-40, 60); ctx.lineTo(-40, -20);
+                ctx.lineTo(-50, 0); ctx.lineTo(-80, -20); ctx.closePath(); ctx.fill();
+                ctx.fillStyle = '#ffffff'; ctx.beginPath(); ctx.arc(0, -60, 20, 0, Math.PI*2); ctx.fill(); // 領口
+            } else if (type === 'icon_soap') {
+                // 畫肥皂與泡泡
+                ctx.fillStyle = '#7bed9f'; ctx.beginPath(); ctx.ellipse(0, 20, 70, 40, -Math.PI/12, 0, Math.PI*2); ctx.fill();
+                ctx.fillStyle = '#2ed573'; ctx.beginPath(); ctx.ellipse(0, 20, 50, 20, -Math.PI/12, 0, Math.PI*2); ctx.fill();
+                ctx.fillStyle = 'rgba(255,255,255,0.7)';
+                ctx.beginPath(); ctx.arc(-50, -30, 20, 0, Math.PI*2); ctx.arc(30, -40, 25, 0, Math.PI*2);
+                ctx.arc(-10, -60, 15, 0, Math.PI*2); ctx.arc(60, 0, 15, 0, Math.PI*2); ctx.fill();
+            } else if (type === 'icon_star') {
+                // 畫星星
+                ctx.fillStyle = '#feca57';
+                ctx.beginPath();
+                for(let i=0; i<5; i++) {
+                    ctx.lineTo(Math.cos((18+i*72)*Math.PI/180)*80, -Math.sin((18+i*72)*Math.PI/180)*80);
+                    ctx.lineTo(Math.cos((54+i*72)*Math.PI/180)*35, -Math.sin((54+i*72)*Math.PI/180)*35);
+                }
+                ctx.closePath(); ctx.fill();
+            }
+            ctx.restore();
+        }
+
+        // ==========================================
+        // 核心場景渲染器：根據標籤組合畫面
+        // ==========================================
+        function renderScene(scene) {
+            ctx.clearRect(0, 0, cw, ch);
+            ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
+
+            if (scene.startsWith('icon') || scene === 'bible') {
+                drawIconScene(scene);
+                return;
+            }
+
+            if (scene.startsWith('indoor')) {
+                drawIndoor();
+                if (scene === 'indoor_basket') {
+                    // 貓籃子與小貓
+                    ctx.fillStyle = '#d2691e'; ctx.beginPath(); ctx.ellipse(cw/2, ch*0.7, 120, 50, 0, 0, Math.PI*2); ctx.fill();
+                    drawCat(cw/2 - 40, ch*0.65, 0.7, 'curl', false, '#ffffff');
+                    drawCat(cw/2, ch*0.68, 0.6, 'curl', false, '#8d6e63');
+                    drawCat(cw/2 + 40, ch*0.65, 0.65, 'curl', false, '#f1c40f');
+                    drawCat(cw/2 - 120, ch*0.6, 1.4, 'sit', false, '#ffffff'); // 媽媽
+                } else if (scene === 'indoor_nursing') {
+                    drawCat(cw/2, ch*0.65, 1.5, 'curl', false, '#ffffff'); // 媽媽躺著
+                    drawCat(cw/2 - 30, ch*0.75, 0.6, 'curl', false, '#ffffff');
+                    drawCat(cw/2 + 20, ch*0.72, 0.6, 'curl', false, '#8d6e63');
+                } else if (scene === 'indoor_playing') {
+                    drawCat(200, ch*0.7, 1.4, 'sit', false, '#ffffff'); // 媽媽
+                    drawCat(400, ch*0.6, 0.8, 'walk', false, '#ffffff'); // 咪咪
+                    drawCat(550, ch*0.8, 0.7, 'sit', false, '#8d6e63');
+                    // 毛線球
+                    ctx.fillStyle = '#e84393'; ctx.beginPath(); ctx.arc(480, ch*0.75, 15, 0, Math.PI*2); ctx.fill();
+                } else if (scene === 'indoor_bored') {
+                    drawCat(cw/2 - 100, ch*0.7, 1.4, 'sit', false, '#ffffff'); // 媽媽叼貓(意象)
+                    drawCat(cw - 200, ch*0.7, 0.9, 'sit', false, '#ffffff'); // 咪咪無聊
+                } else if (scene === 'indoor_washing') {
+                    drawCat(cw/2 - 80, ch*0.65, 1.5, 'wash', false, '#ffffff'); // 媽媽
+                    drawCat(cw/2 + 50, ch*0.75, 0.9, 'sad', true, '#ffffff'); // 髒咪咪
+                } else if (scene === 'indoor_teaching') {
+                    drawCat(cw/2 - 100, ch*0.65, 1.5, 'wash', false, '#ffffff');
+                    drawCat(cw/2 + 50, ch*0.75, 0.9, 'sit', true, '#ffffff');
+                } else if (scene === 'indoor_self_wash') {
+                    drawCat(cw/2 - 100, ch*0.65, 1.5, 'sit', false, '#ffffff');
+                    drawCat(cw/2 + 50, ch*0.75, 0.9, 'wash', false, '#ffffff'); // 洗乾淨了
+                } else if (scene === 'indoor_praying') {
+                    drawCat(cw/2 - 80, ch*0.65, 1.4, 'pray', false, '#ffffff');
+                    drawCat(cw/2 + 60, ch*0.75, 0.9, 'pray', false, '#ffffff');
+                    // 神聖光芒
+                    ctx.fillStyle = 'rgba(255, 234, 167, 0.3)';
+                    ctx.beginPath(); ctx.moveTo(cw/2-50, 0); ctx.lineTo(cw/2+50, 0); ctx.lineTo(cw/2+150, ch); ctx.lineTo(cw/2-150, ch); ctx.fill();
+                }
+            } 
+            else if (scene.startsWith('garden')) {
+                drawGradient('#81ecec', '#55efc4', 0, ch); // 天空與草地
+                drawSkyDetails();
+                // 花朵
+                for(let i=0; i<5; i++) {
+                    ctx.fillStyle = '#e84393'; ctx.beginPath(); ctx.arc(100+i*150, ch-40, 20, 0, Math.PI*2); ctx.fill();
+                    ctx.fillStyle = '#f1c40f'; ctx.beginPath(); ctx.arc(100+i*150, ch-40, 8, 0, Math.PI*2); ctx.fill();
+                    ctx.fillStyle = '#27ae60'; ctx.fillRect(98+i*150, ch-20, 4, 20);
+                }
+                if (scene === 'garden_butterfly') {
+                    drawCat(cw/2, ch*0.7, 1, 'walk', false, '#ffffff');
+                    drawButterfly(cw/2 + 100, 150, 1.2, '#fd79a8');
+                    drawButterfly(cw/2 + 200, 100, 0.8, '#a29bfe');
+                    drawButterfly(cw/2 - 100, 120, 1, '#ffeaa7');
+                } else if (scene === 'garden_clean') {
+                    drawCat(cw/2, ch*0.7, 1.2, 'sit', false, '#ffffff'); // 乾淨發光
+                    // 閃星星
+                    ctx.fillStyle = '#f1c40f';
+                    ctx.fillText('✨', cw/2 - 60, ch*0.6); ctx.fillText('✨', cw/2 + 50, ch*0.5);
+                }
+            }
+            else if (scene.startsWith('farm')) {
+                drawGradient('#74b9ff', '#fab1a0', 0, ch*0.5); // 天空
+                drawGradient('#e1b12c', '#f39c12', ch*0.5, ch); // 曬穀場
+                drawSkyDetails();
+                
+                // 農舍背景
+                ctx.fillStyle = '#d35400'; ctx.fillRect(cw-250, ch*0.2, 200, ch*0.3);
+                ctx.fillStyle = '#c0392b'; ctx.beginPath(); ctx.moveTo(cw-270, ch*0.2); ctx.lineTo(cw-150, ch*0.05); ctx.lineTo(cw-30, ch*0.2); ctx.fill();
+
+                if (scene === 'farm_rooster') {
+                    // 地上穀粒
+                    ctx.fillStyle = '#f1c40f';
+                    for(let i=0; i<30; i++) { ctx.beginPath(); ctx.arc(100+Math.random()*cw*0.5, ch*0.6+Math.random()*100, 3, 0, Math.PI*2); ctx.fill(); }
+                    drawRooster(cw/2 + 100, ch*0.7);
+                    drawCat(200, ch*0.75, 1, 'grain', false, '#ffffff'); // 嘴巴沾穀粒
+                }
+            }
+            else if (scene.startsWith('mud')) {
+                drawGradient('#b2bec3', '#74b9ff', 0, ch*0.5);
+                drawGradient('#a4b0be', '#8d6e63', ch*0.5, ch);
+                drawMudPen();
+                if (scene === 'mud_approaching') {
+                    drawPig(cw/2, ch*0.7, 1, false); drawPig(cw/2 + 150, ch*0.75, 0.9, true);
+                    drawCat(150, ch*0.8, 1, 'walk', false, '#ffffff'); // 還沒髒
+                } else if (scene === 'mud_splashed') {
+                    drawPig(cw/2, ch*0.7, 1, false); drawPig(cw/2 + 150, ch*0.75, 0.9, true);
+                    drawCat(250, ch*0.8, 1, 'sad', true, '#ffffff'); // 變髒了
+                }
+            }
+            else if (scene.startsWith('forest')) {
+                drawGradient('#a29bfe', '#55efc4', 0, ch);
+                drawTree(150, ch*0.6, 1.2); drawTree(cw/2, ch*0.5, 0.8); drawTree(cw-150, ch*0.6, 1.5);
+                
+                if (scene === 'forest_walking') {
+                    drawCat(cw/2, ch*0.8, 1, 'walk', true, '#ffffff');
+                    // 松鼠
+                    ctx.fillStyle = '#d35400'; ctx.beginPath(); ctx.arc(200, ch*0.8, 15, 0, Math.PI*2); ctx.fill();
+                    ctx.beginPath(); ctx.ellipse(180, ch*0.8, 20, 10, -Math.PI/4, 0, Math.PI*2); ctx.fill(); // 尾巴
+                } else if (scene === 'forest_meeting' || scene === 'forest_talking') {
+                    drawCat(cw/2 - 100, ch*0.8, 1, 'sit', true, '#ffffff');
+                    drawRabbit(cw/2 + 150, ch*0.8);
+                }
+            }
+            else if (scene.startsWith('stream')) {
+                drawGradient('#74b9ff', '#55efc4', 0, ch*0.6);
+                drawGradient('#0984e3', '#74b9ff', ch*0.6, ch); // 溪水
+                
+                // 水波紋
+                ctx.strokeStyle = 'rgba(255,255,255,0.4)'; ctx.lineWidth = 2;
+                for(let i=0; i<5; i++) {
+                    ctx.beginPath(); ctx.moveTo(100+i*50, ch*0.7+i*20); ctx.quadraticCurveTo(150+i*50, ch*0.7+i*20-10, 200+i*50, ch*0.7+i*20); ctx.stroke();
+                }
+
+                if (scene === 'stream_reflection') {
+                    drawCat(cw/2 - 100, ch*0.55, 1, 'walk', true, '#ffffff');
+                    // 倒影
+                    ctx.save(); ctx.translate(cw/2 - 100, ch*0.65); ctx.scale(1, -0.6);
+                    ctx.globalAlpha = 0.3; drawCatHead(0, 0, 'sad', true); ctx.restore();
+                    drawRabbit(cw/2 + 150, ch*0.55);
+                } else if (scene === 'stream_sad' || scene === 'stream_pointing') {
+                    drawCat(cw/2 - 100, ch*0.55, 1, 'sad', true, '#ffffff');
+                    drawRabbit(cw/2 + 150, ch*0.55);
+                }
+            }
+            else if (scene === 'running_home') {
+                drawGradient('#2c3e50', '#e67e22', 0, ch*0.6); // 黃昏
+                drawSkyDetails(true);
+                drawGradient('#27ae60', '#2ecc71', ch*0.6, ch);
+                // 遠處房子
+                ctx.fillStyle = '#34495e'; ctx.fillRect(100, ch*0.4, 100, ch*0.2);
+                ctx.fillStyle = '#c0392b'; ctx.beginPath(); ctx.moveTo(90, ch*0.4); ctx.lineTo(150, ch*0.3); ctx.lineTo(210, ch*0.4); ctx.fill();
+                drawCat(cw - 200, ch*0.75, 1.2, 'walk', true, '#ffffff'); // 跑回家
+            }
+        }
+
+        // ==========================================
+        // 翻頁控制與下載邏輯
+        // ==========================================
+        function renderPage() {
+            const data = storyData[currentPage];
+            
+            document.getElementById("sectionTitle").innerText = data.section;
+            document.getElementById("pageContent").innerText = data.text;
+            document.getElementById("pageIndicator").innerText = `${currentPage + 1} / ${storyData.length}`;
+            
+            document.getElementById("prevBtn").disabled = currentPage === 0;
+            document.getElementById("nextBtn").disabled = currentPage === storyData.length - 1;
+
+            renderScene(data.scene);
+        }
+
+        function nextPage() {
+            if (currentPage < storyData.length - 1) {
+                currentPage++;
+                renderPage();
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 0) {
+                currentPage--;
+                renderPage();
+            }
+        }
+
+        // 儲存 HTML 檔案的功能
+        function downloadHTML() {
+            // 取得當前的完整 HTML 文件內容
+            let htmlContent = document.documentElement.outerHTML;
+            // 確保檔案開頭帶有標準 DOCTYPE 宣告
+            htmlContent = "<!DOCTYPE html>\n" + htmlContent;
+            
+            // 建立 Blob 物件將字串轉為檔案
+            const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            
+            // 建立一個隱藏的超連結並觸發下載
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = '咪咪歷險記_互動繪本.html';
+            document.body.appendChild(a);
+            a.click();
+            
+            // 清理釋放記憶體
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // 啟動應用
+        window.onload = () => {
+            renderPage();
+        };
+    </script>
+
+</body></html>
